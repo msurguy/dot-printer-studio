@@ -1,0 +1,204 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(20, 147, 194, 0.25), transparent 30%),
+    radial-gradient(circle at 80% 90%, rgba(237, 92, 92, 0.2), transparent 32%),
+    linear-gradient(135deg, #08111d, #111d2d 42%, #0f1a23 100%);
+  color: #f4f8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+code {
+  font-family: "SF Mono", "Consolas", "Fira Code", monospace;
+}
+
+.demo-shell {
+  width: min(1400px, 100%);
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+}
+
+.demo-header {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 18px;
+  background: linear-gradient(140deg, rgba(10, 24, 38, 0.9), rgba(20, 39, 58, 0.7));
+}
+
+.demo-header h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  letter-spacing: 0.04em;
+}
+
+.demo-header p {
+  margin: 8px 0 0;
+  color: rgba(240, 245, 255, 0.84);
+}
+
+.demo-toolbar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.toolbar-card {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 19, 29, 0.84);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.toolbar-card .row {
+  display: flex;
+  gap: 8px;
+}
+
+label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(228, 238, 255, 0.85);
+}
+
+select,
+button,
+input {
+  font: inherit;
+}
+
+select,
+input[type="file"],
+button,
+input[type="color"] {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(17, 29, 44, 0.95);
+  color: #f8faff;
+  padding: 8px 10px;
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(140deg, rgba(34, 95, 177, 0.9), rgba(34, 123, 113, 0.9));
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.source-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: rgba(211, 227, 255, 0.84);
+}
+
+.demo-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  gap: 16px;
+}
+
+.player-panel {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(6, 14, 22, 0.88);
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.player-surface {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 10, 16, 0.7);
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+}
+
+.player-surface > div {
+  margin: 14px;
+}
+
+.transport {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.controls-panel {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(8, 16, 26, 0.9);
+  padding: 14px;
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.control-group {
+  display: grid;
+  gap: 8px;
+}
+
+.control-group.inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #39b3d2;
+}
+
+.stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  padding-top: 12px;
+  display: grid;
+  gap: 6px;
+  font-size: 0.86rem;
+  color: rgba(220, 232, 255, 0.92);
+}
+
+.stats p {
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .demo-shell {
+    padding: 14px;
+  }
+
+  .demo-main {
+    grid-template-columns: 1fr;
+  }
+
+  .player-surface {
+    min-height: 280px;
+  }
+}
