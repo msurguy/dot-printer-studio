@@ -3,9 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dot Printer Studio</title>
+    <title>Dot Printer Studio | Dot-Matrix Animation Editor and Web Player</title>
+    <meta
+      name="description"
+      content="Dot Printer Studio is a browser-based editor and player for creating dot-matrix animations with timeline controls, frame editing, SVG tracing, and .dotp export."
+    />
+    <meta
+      name="keywords"
+      content="dot matrix animation, dot printer, web animation editor, canvas animation, timeline editor, creative coding, .dotp"
+    />
+    <meta name="author" content="Maks Surguy" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="application-name" content="Dot Printer Studio" />
+    <meta name="apple-mobile-web-app-title" content="Dot Printer Studio" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dot Printer Studio" />
+    <meta
+      property="og:title"
+      content="Dot Printer Studio | Dot-Matrix Animation Editor and Web Player"
+    />
+    <meta
+      property="og:description"
+      content="Create, preview, and export dot-matrix animations in the browser with frame-level timing, connection tools, and reusable animation assets."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Dot Printer Studio | Dot-Matrix Animation Editor and Web Player"
+    />
+    <meta
+      name="twitter:description"
+      content="Build and play dot-matrix animations with a visual editor, timeline controls, and portable .dotp files."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Dot Printer Studio",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "description": "A browser-based editor and player for creating and previewing dot-matrix animations.",
+        "softwareVersion": "0.1.0",
+        "author": {
+          "@type": "Person",
+          "name": "Maks Surguy"
+        }
+      }
+    </script>
   </head>
   <body>
+    <noscript>
+      <main>
+        <h1>Dot Printer Studio</h1>
+        <p>
+          Dot Printer Studio is a web-based editor and player for creating dot-matrix
+          animations with timeline controls, frame editing, and portable project exports.
+        </p>
+      </main>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

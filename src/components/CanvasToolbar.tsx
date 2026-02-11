@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useState, type CSSProperties, type KeyboardEvent, type RefObject } from "react";
+import {
+  useCallback,
+  useEffect,
+  useState,
+  type CSSProperties,
+  type KeyboardEvent,
+  type MutableRefObject,
+} from "react";
 import { createPortal } from "react-dom";
 import { Grid, Settings } from "lucide-react";
 import { clamp } from "../lib/canvas";
@@ -15,8 +22,8 @@ interface CanvasToolbarProps {
   isCanvasSettingsOpen: boolean;
   setIsCanvasSettingsOpen: (open: boolean) => void;
   canvasSettingsStyle: CSSProperties;
-  canvasSettingsButtonRef: RefObject<HTMLButtonElement | null>;
-  canvasSettingsMenuRef: RefObject<HTMLDivElement | null>;
+  canvasSettingsButtonRef: MutableRefObject<HTMLButtonElement | null>;
+  canvasSettingsMenuRef: MutableRefObject<HTMLDivElement | null>;
   onGridSizeChange: (value: number) => void;
   onDotGapChange: (value: number) => void;
   onDotSizeChange: (value: number) => void;

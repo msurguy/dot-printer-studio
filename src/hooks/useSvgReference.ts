@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback, type ChangeEvent, type RefObject } from "react";
+import { useState, useRef, useCallback, type ChangeEvent, type MutableRefObject } from "react";
 import type { Tool } from "../components/editorUtils";
 
 export interface SvgReferenceState {
@@ -15,8 +15,8 @@ export interface SvgReferenceState {
 export interface UseSvgReferenceReturn {
   svgReference: SvgReferenceState;
   setSvgReference: React.Dispatch<React.SetStateAction<SvgReferenceState>>;
-  svgImageRef: RefObject<HTMLImageElement | null>;
-  previousToolRef: RefObject<Tool | null>;
+  svgImageRef: MutableRefObject<HTMLImageElement | null>;
+  previousToolRef: MutableRefObject<Tool | null>;
   isDragOver: boolean;
   setIsDragOver: React.Dispatch<React.SetStateAction<boolean>>;
   handleSvgImport: (file: File) => void;

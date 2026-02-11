@@ -1003,7 +1003,7 @@ const Editor = () => {
               onPointerDown={handleCanvasPointerDown}
               onPointerMove={handleCanvasPointerMove}
               onPointerUp={handleCanvasPointerUp}
-              onPointerLeave={handleCanvasPointerUp}
+              onPointerCancel={handleCanvasPointerUp}
               onDragOver={handleCanvasDragOver}
               onDragEnter={handleCanvasDragEnter}
               onDragLeave={handleCanvasDragLeave}

@@ -235,7 +235,7 @@ const createConnectingConceptsPreset = () => {
   const connectionColor = DEFAULT_CONNECTION_COLOR;
 
   const designDots = createDotsFromText("DESIGN", 6, 10, colorA);
-  const engineeringDots = createDotsFromText("ENGINEERING", 6, 26, colorB);
+  const engineeringDots = createDotsFromText("ENGINEER", 6, 26, colorB);
   const centerA = getCenter(designDots);
   const centerB = getCenter(engineeringDots);
   const bridgeDots = buildLineDots(centerA.x, centerA.y, centerB.x, centerB.y, connectionColor);
@@ -285,7 +285,7 @@ const createHumanComputerPreset = () => {
   const connectionColor = PRESET_COLORS[2];
 
   const humanDots = createDotsFromText("HUMAN", 4, 16, colorA);
-  const computerDots = createDotsFromText("COMPUTER", 44, 16, colorB);
+  const computerDots = createDotsFromText("COMPUTER", 4, 26, colorB);
   const centerA = getCenter(humanDots);
   const centerB = getCenter(computerDots);
   const bridgeDots = buildLineDots(centerA.x, centerA.y, centerB.x, centerB.y, connectionColor);
@@ -341,12 +341,12 @@ const createCheckmarkPreset = () => {
   const connectionColor = PRESET_COLORS[2];
 
   // Create checkmark shape using line dots
-  const shortStroke = buildLineDots(30, 35, 40, 45, checkColor);
-  const longStroke = buildLineDots(40, 45, 70, 20, checkColor);
+  const shortStroke = buildLineDots(10, 35, 20, 45, checkColor);
+  const longStroke = buildLineDots(20, 45, 50, 20, checkColor);
   const checkmarkDots = mergeDots(shortStroke, longStroke);
 
   // Circle around the checkmark
-  const circleDots = buildCircleDots(50, 32, 24, 64, checkColor);
+  const circleDots = buildCircleDots(30, 32, 24, 64, checkColor);
   const allDots = mergeDots(checkmarkDots, circleDots);
 
   return createProject("Checkmark", [
@@ -397,39 +397,6 @@ const createOKTextPreset = () => {
   ]);
 };
 
-const createSpinnerPreset = () => {
-  const spinnerColor = PRESET_COLORS[4];
-  const connectionColor = PRESET_COLORS[2];
-
-  // Create rotating arc segments
-  const arc1 = buildCircleDots(50, 32, 20, 16, spinnerColor).slice(0, 12);
-  const arc2 = buildCircleDots(50, 32, 20, 16, spinnerColor).slice(4, 16);
-  const arc3 = buildCircleDots(50, 32, 20, 16, spinnerColor).slice(8, 16).concat(
-    buildCircleDots(50, 32, 20, 16, spinnerColor).slice(0, 4)
-  );
-
-  return createProject(
-    "Loading Spinner",
-    [
-      createFrame("Frame 1", arc1, buildLoopConnections(arc1, connectionColor, 500), {
-        connectionAnimationDuration: 500,
-        connectionStagger: 20,
-        duration: 400,
-      }),
-      createFrame("Frame 2", arc2, buildLoopConnections(arc2, connectionColor, 500), {
-        connectionAnimationDuration: 500,
-        connectionStagger: 20,
-        duration: 400,
-      }),
-      createFrame("Frame 3", arc3, buildLoopConnections(arc3, connectionColor, 500), {
-        connectionAnimationDuration: 500,
-        connectionStagger: 20,
-        duration: 400,
-      }),
-    ],
-    100
-  );
-};
 
 const createWavePatternPreset = () => {
   const waveColor = PRESET_COLORS[6];
@@ -477,7 +444,6 @@ export const PRESET_LIBRARY: PresetEntry[] = [
   { name: "Pulse Loop", create: createPulseLoopPreset },
   { name: "Checkmark", create: createCheckmarkPreset },
   { name: "OK Text", create: createOKTextPreset },
-  { name: "Loading Spinner", create: createSpinnerPreset },
   { name: "Wave Pattern", create: createWavePatternPreset },
 ];
 

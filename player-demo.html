@@ -3,9 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dot Printer Player Demo</title>
+    <title>Dot Printer Player Demo | Dot Animation Runtime Showcase</title>
+    <meta
+      name="description"
+      content="Interactive demo for Dot Printer Player. Load .dotp or JSON animation files, test playback controls, inspect frame timing, and evaluate DotPlayerReact integration."
+    />
+    <meta
+      name="keywords"
+      content="dot animation player, DotPlayerReact, dotp player, canvas animation runtime, react animation player, dot matrix demo"
+    />
+    <meta name="author" content="Maks Surguy" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="application-name" content="Dot Printer Player Demo" />
+    <meta name="apple-mobile-web-app-title" content="Dot Printer Player Demo" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dot Printer Studio" />
+    <meta
+      property="og:title"
+      content="Dot Printer Player Demo | Dot Animation Runtime Showcase"
+    />
+    <meta
+      property="og:description"
+      content="Try the Dot Printer player runtime in the browser with transport controls, frame seeking, speed/zoom tuning, and support for .dotp and JSON assets."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Dot Printer Player Demo | Dot Animation Runtime Showcase"
+    />
+    <meta
+      name="twitter:description"
+      content="Interactive demo of DotPlayerReact and DotPlayer for dot-matrix animation playback."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Dot Printer Player Demo",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "description": "Interactive web demo for previewing dot-matrix animations with Dot Player.",
+        "author": {
+          "@type": "Person",
+          "name": "Maks Surguy"
+        },
+        "isPartOf": {
+          "@type": "SoftwareApplication",
+          "name": "Dot Printer Studio"
+        }
+      }
+    </script>
   </head>
   <body>
+    <noscript>
+      <main>
+        <h1>Dot Printer Player Demo</h1>
+        <p>
+          This page demonstrates Dot Printer Player playback for .dotp and JSON
+          animations, including timeline scrubbing, frame navigation, and runtime controls.
+        </p>
+      </main>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/player-demo/main.tsx"></script>
   </body>

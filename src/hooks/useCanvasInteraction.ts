@@ -91,10 +91,10 @@ interface UseCanvasInteractionParams {
   // SVG reference
   svgReference: SvgReferenceState;
   setSvgReference: React.Dispatch<React.SetStateAction<SvgReferenceState>>;
-  previousToolRef: React.RefObject<Tool | null>;
+  previousToolRef: React.MutableRefObject<Tool | null>;
   setTool: React.Dispatch<React.SetStateAction<Tool>>;
   // Rotation
-  rotationHandleRef: React.RefObject<RotationHandleState | null>;
+  rotationHandleRef: React.MutableRefObject<RotationHandleState | null>;
   isRotating: boolean;
   setIsRotating: React.Dispatch<React.SetStateAction<boolean>>;
   rotationStartAngle: number;
@@ -275,6 +275,12 @@ export const useCanvasInteraction = ({
   const handleCanvasPointerDown = useCallback(
     (event: PointerEvent<HTMLCanvasElement>) => {
       if (!frame) return;
+
+      // Keep receiving pointer events after leaving canvas bounds.
+      if (!event.currentTarget.hasPointerCapture(event.pointerId)) {
+        event.currentTarget.setPointerCapture(event.pointerId);
+      }
+
       isDragging.current = true;
 
       const pixelPos = getPixelCoords(event);
@@ -707,6 +713,10 @@ export const useCanvasInteraction = ({
 
   const handleCanvasPointerUp = useCallback(
     (event: PointerEvent<HTMLCanvasElement>) => {
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+        event.currentTarget.releasePointerCapture(event.pointerId);
+      }
+
       if (!frame) return;
       isDragging.current = false;
       dotToolMode.current = null;

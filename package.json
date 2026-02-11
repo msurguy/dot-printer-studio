@@ -1,0 +1,52 @@
+{
+  "name": "dot-printer-studio",
+  "version": "0.1.0",
+  "description": "Visual editor and web player for creating and previewing dot-printer animations.",
+  "license": "MIT",
+  "author": "Maks Surguy",
+  "homepage": "https://github.com/msurguy/dot-printer-studio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msurguy/dot-printer-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msurguy/dot-printer-studio/issues"
+  },
+  "keywords": [
+    "dot-printer",
+    "dot-matrix",
+    "animation",
+    "editor",
+    "player",
+    "react",
+    "typescript",
+    "vite",
+    "timeline",
+    "creative-coding"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "build:pages": "VITE_BASE_PATH=\"/${npm_package_name}/\" vite build",
+    "ci": "npm run typecheck && npm run build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.562.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}

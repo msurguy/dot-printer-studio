@@ -5,7 +5,7 @@ import {
   useEffect,
   useLayoutEffect,
   type CSSProperties,
-  type RefObject,
+  type MutableRefObject,
 } from "react";
 import { clamp } from "../lib/canvas";
 import { ensureColorRef, type Connection, type Dot, type Project } from "../lib/project";
@@ -26,8 +26,8 @@ export interface UseCanvasSettingsReturn {
   isCanvasSettingsOpen: boolean;
   setIsCanvasSettingsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   canvasSettingsStyle: CSSProperties;
-  canvasSettingsButtonRef: RefObject<HTMLButtonElement | null>;
-  canvasSettingsMenuRef: RefObject<HTMLDivElement | null>;
+  canvasSettingsButtonRef: MutableRefObject<HTMLButtonElement | null>;
+  canvasSettingsMenuRef: MutableRefObject<HTMLDivElement | null>;
   gridSizeDialog: GridSizeDialogState;
   handleGridSizeChange: (value: number) => void;
   confirmGridSizeChange: () => void;
