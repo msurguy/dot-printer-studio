@@ -2,10 +2,8 @@
 
 A visual editor and web player for building **dot-matrix style animations** that are easy to author, inspect, and run in the browser. Created by Maks Surguy
 
-
-
 <p align="center">
-  <video src="./youcandothings.mp4" controls muted playsinline width="720">
+  <video src="https://github.com/user-attachments/assets/2751d506-7418-465e-9075-bbf92d7076f1" controls muted playsinline width="720">
     Your browser does not support the video tag.
   </video>
 </p>
