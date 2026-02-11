@@ -84,7 +84,7 @@ body {
 
 .mode-toggle {
   display: flex;
-  gap: 8px;
+  gap: 2px;
   background: hsl(var(--muted-surface));
   padding: 4px;
   border-radius: 999px;
@@ -132,7 +132,7 @@ body {
 .toolbar-group {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
@@ -157,6 +157,33 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.toolbar-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.toolbar-info-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.toolbar-info-btn:hover {
+  color: var(--ink);
+  background: hsl(var(--muted-surface));
 }
 
 .toolbar-label {
@@ -1427,6 +1454,62 @@ body {
 
 .dialog-actions .btn {
   min-width: 100px;
+}
+
+.info-dialog {
+  max-width: 560px;
+}
+
+.info-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.info-dialog-header .dialog-title {
+  margin-bottom: 0;
+}
+
+.info-dialog-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--background));
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.info-dialog-close:hover {
+  color: var(--ink);
+  background: hsl(var(--muted-surface));
+}
+
+.info-meta {
+  margin-top: 10px;
+}
+
+.info-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.info-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: hsl(var(--accent-2));
+  text-decoration: none;
+}
+
+.info-links a:hover {
+  text-decoration: underline;
 }
 
 .btn-primary {
